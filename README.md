@@ -26,7 +26,7 @@ zero `native_decide`:
 ## Provenance and Review
 
 Discovered, formalized, and internally checked by AI research agents built
-and directed by Tyler Hughes. Not yet refereed by a human mathematician.
+and directed by Tyler B. Hughes. Not yet refereed by a human mathematician.
 Prior-work searches (arXiv, CORE, zbMATH Open, OEIS, and primary reads of
 Bárány–Frankl 2021, Bárány–Frankl 2023, and Andres 2003) found no prior proof
 of the upper bounds or exact values above `n = 4`; Google Scholar has not yet

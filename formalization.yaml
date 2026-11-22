@@ -14,10 +14,10 @@ project:
     window 33 <= n <= 699 is not discharged inside Lean and is certified
     separately by exact-integer programs documented in the accompanying paper.
   authors:
-    - "Tyler Hughes"
+    - "Tyler B. Hughes"
   license: "Apache-2.0"
   responsible_maintainers:
-    - "Tyler Hughes"
+    - "Tyler B. Hughes"
 
 classification:
   arxiv: ["math.CO", "math.MG"]
@@ -45,7 +45,7 @@ sources:
       Original upper-bound and exact-maximum theorems (3 <= n <= 32 including
       m(10) = 230, n >= 700, refutation of Barany and Frankl's Section 5 "+2"
       remark for n >= 700, and universal upper bound for all n >= 2) discovered
-      and formalized by AI research agents built and directed by Tyler Hughes;
+      and formalized by AI research agents built and directed by Tyler B. Hughes;
       accompanying unrefereed manuscript at mathdiscoveries.org.
   - title: "Cells in the box and a hyperplane"
     authors:
@@ -86,7 +86,7 @@ automation:
   methods:
     - method: agent
       models: []
-      framework: "AI research agent pipeline built and directed by Tyler Hughes"
+      framework: "AI research agent pipeline built and directed by Tyler B. Hughes"
       tool_setup: >-
         Autonomous builder, adversarial falsifier, and reviewer agents
         discovered the proof strategy, wrote the Lean 4 + Mathlib
@@ -100,7 +100,7 @@ automation:
   notes: >-
     All proof discovery, Lean 4 formalization, and internal adversarial
     verification were performed by AI research agents built and directed by
-    Tyler Hughes. No human mathematician has yet refereed the proof.
+    Tyler B. Hughes. No human mathematician has yet refereed the proof.
 
 fidelity:
   divergences: >-
