@@ -1,0 +1,14 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "CheeseCutM.maxCutCount_eq_F_ge_700",
+    "CheeseCutM.barany_frankl_plus_two_refuted_ge_700",
+    "CheeseCutM.maxCutCount_eq_F_3_to_32",
+    "CheeseCutM.maxCutCount_ten",
+    "CheeseCutM.theoremU_bound_all_ge_2",
+    "CheeseCutM.barany_frankl_lower_bound"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+}

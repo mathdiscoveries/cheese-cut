@@ -1,0 +1,154 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Maximum Unit Cubes Cut by a Plane in [0, n]^3 (Cheese-Cutting Theorem M)"
+  description: >-
+    Unconditional Lean 4 + Mathlib formalization over R of the exact maximum
+    number m(n) of open unit cubes of the n x n x n cube [0, n]^3 met by a
+    single plane, proving m(n) = floor((9n^2 + 4n - 17)/4) for all 3 <= n <= 32
+    (in particular m(10) = 230, settling the open case stated by Barany and
+    Frankl, 2021) and for all n >= 700, refuting Barany and Frankl's Section 5
+    "+2" remark for all n >= 700, and proving the universal upper bound
+    m(n) <= floor((9n^2 + 6n - 20)/4) for every n >= 2. The finite intermediate
+    window 33 <= n <= 699 is not discharged inside Lean and is certified
+    separately by exact-integer programs documented in the accompanying paper.
+  authors:
+    - "Tyler Hughes"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Tyler Hughes"
+
+classification:
+  arxiv: ["math.CO", "math.MG"]
+  msc2020: ["52C07", "52C35"]
+
+sources:
+  - title: "The most unit cubes a plane can cut: exact bounds for 3 <= n <= 32, n >= 700, and universal upper bound for n >= 2"
+    type: original-proof
+    relationship: other
+    note: >-
+      Original upper bounds, finite-range Farkas-BSP kernel certificates
+      (3 <= n <= 32), universal bound (n >= 2), and large-n theorem (n >= 700)
+      discovered and formalized by AI research agents built and directed by
+      Tyler Hughes; accompanying unrefereed manuscript at mathdiscoveries.org.
+  - title: "How (not) to cut your cheese"
+    authors:
+      - "Imre Barany"
+      - "Peter Frankl"
+    id: "https://doi.org/10.1080/00029890.2021.1901463"
+    type: paper
+    location: "American Mathematical Monthly 128 (2021), 543-552"
+    relationship: background
+    note: >-
+      Poses the problem, constructs the lower bound F(n) = floor((9n^2 + 4n - 17)/4)
+      for n >= 3 (formalized here as barany_frankl_lower_bound), states the
+      open interval 230 <= m(10) <= 246, and remarks in Section 5 that m(n) >= F(n) + 2
+      for large n.
+  - title: "Cells in the box and a hyperplane"
+    authors:
+      - "Imre Barany"
+      - "Peter Frankl"
+    id: "https://doi.org/10.4171/JEMS/1252"
+    type: paper
+    location: "Journal of the European Mathematical Society 25 (2023), 2863-2877"
+    relationship: background
+    note: "Asymptotic d-dimensional hyperplane cell-cutting theorem."
+  - title: "Discrete linear objects in dimension n: the standard model"
+    authors:
+      - "Eric Andres"
+    id: "https://doi.org/10.1016/S1524-0703(03)00004-3"
+    type: paper
+    location: "Graphical Models 65 (2003), 92-111"
+    relationship: background
+    note: "Standard arithmetic plane model related in CheeseCutM/SmallNAndDim.lean."
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Unconditionally proved in Lean 4 over R with standard axioms only (zero
+    sorry, zero native_decide): m(n) = F(n) for all 3 <= n <= 32 (including
+    m(10) = 230) and all n >= 700; m(n) < F(n) + 2 for all n >= 700; the
+    universal upper bound cutCount <= floor((9n^2 + 6n - 20)/4) for all n >= 2;
+    and the lower-bound construction cutCount = F(n) for all n >= 3.
+    Not formalized inside Lean: the finite intermediate cases 33 <= n <= 699,
+    for which CheeseCutM proves Proposition V (soundness of the vertex
+    certificate verifier) while the certificates themselves are checked
+    externally in exact integer arithmetic.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+
+automation:
+  methods:
+    - method: agent
+      models: []
+      framework: "AI research agent pipeline built and directed by Tyler Hughes"
+      tool_setup: >-
+        Autonomous builder, adversarial falsifier, and reviewer agents
+        discovered the proof strategy, wrote the Lean 4 + Mathlib
+        formalization, and audited axioms and statements.
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local machine"
+      prompting_notes: "Goal-directed mathematical discovery and Lean 4 formalization."
+  spend_usd: "not tracked"
+  notes: >-
+    All proof discovery, Lean 4 formalization, and internal adversarial
+    verification were performed by AI research agents built and directed by
+    Tyler Hughes. No human mathematician has yet refereed the proof.
+
+fidelity:
+  divergences: >-
+    The full theorem m(n) = F(n) for all n >= 3 leaves the finite window
+    33 <= n <= 699 to external exact-integer vertex certificates; the six
+    compared declarations in Challenge.lean state only the 100% unconditional
+    Lean-proved ranges (3 <= n <= 32, n >= 700, universal bound n >= 2, and
+    lower bound n >= 3).
+
+review:
+  status: agent-reviewed
+  reviewers:
+    - "Internal adversarial falsifier and reviewer agents"
+  notes: >-
+    Checked by separate internal falsifier and reviewer agents and audited for
+    standard axioms only via CheeseCutM/Verify.lean. Not yet refereed by a
+    human mathematician.
+
+alignment:
+  namespace: "CheeseCutM"
+  statements:
+    - source: "Exact formula for n >= 700"
+      lean: "CheeseCutM.maxCutCount_eq_F_ge_700"
+      module: "CheeseCutM.Main"
+      status: proved
+      note: "Unconditional over R for all n >= 700."
+    - source: "Refutation of Barany-Frankl Section 5 +2 remark for n >= 700"
+      lean: "CheeseCutM.barany_frankl_plus_two_refuted_ge_700"
+      module: "CheeseCutM.Main"
+      status: proved
+      note: "Unconditional over R for all n >= 700."
+    - source: "Exact formula for 3 <= n <= 32"
+      lean: "CheeseCutM.maxCutCount_eq_F_3_to_32"
+      module: "CheeseCutM.SmallNAndDim"
+      status: proved
+      note: "Unconditional over R via pure-kernel Nat Farkas-BSP certificates."
+    - source: "Open case n = 10 from Barany-Frankl (2021)"
+      lean: "CheeseCutM.maxCutCount_ten"
+      module: "CheeseCutM.SmallNAndDim"
+      status: proved
+      note: "Proves maxCutCount 10 = 230 unconditionally over R."
+    - source: "Universal upper bound for all n >= 2"
+      lean: "CheeseCutM.theoremU_bound_all_ge_2"
+      module: "CheeseCutM.SmallNAndDim"
+      status: proved
+      note: "Proves cutCount <= floor((9n^2 + 6n - 20)/4) for every n >= 2."
+    - source: "Barany-Frankl lower-bound construction for all n >= 3"
+      lean: "CheeseCutM.barany_frankl_lower_bound"
+      module: "CheeseCutM.Defs"
+      status: proved
+      note: "Explicit tilted plane cutting exactly F(n) open unit cubes."
+
+acknowledgements: "Built on Lean 4 and Mathlib."
