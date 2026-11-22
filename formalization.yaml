@@ -24,14 +24,6 @@ classification:
   msc2020: ["52C07", "52C35"]
 
 sources:
-  - title: "The most unit cubes a plane can cut: exact bounds for 3 <= n <= 32, n >= 700, and universal upper bound for n >= 2"
-    type: original-proof
-    relationship: other
-    note: >-
-      Original upper bounds, finite-range Farkas-BSP kernel certificates
-      (3 <= n <= 32), universal bound (n >= 2), and large-n theorem (n >= 700)
-      discovered and formalized by AI research agents built and directed by
-      Tyler Hughes; accompanying unrefereed manuscript at mathdiscoveries.org.
   - title: "How (not) to cut your cheese"
     authors:
       - "Imre Barany"
@@ -39,12 +31,22 @@ sources:
     id: "https://doi.org/10.1080/00029890.2021.1901463"
     type: paper
     location: "American Mathematical Monthly 128 (2021), 543-552"
-    relationship: background
+    relationship: formalizes
     note: >-
-      Poses the problem, constructs the lower bound F(n) = floor((9n^2 + 4n - 17)/4)
-      for n >= 3 (formalized here as barany_frankl_lower_bound), states the
-      open interval 230 <= m(10) <= 246, and remarks in Section 5 that m(n) >= F(n) + 2
-      for large n.
+      Poses the problem, constructs the tilted-plane lower bound
+      F(n) = floor((9n^2 + 4n - 17)/4) for n >= 3 (formalized by the compared
+      theorem CheeseCutM.barany_frankl_lower_bound, including the odd-n case
+      left to the reader), states the open interval 230 <= m(10) <= 246, and
+      remarks in Section 5 that m(n) >= F(n) + 2 for large n.
+  - title: "The most unit cubes a plane can cut: exact bounds for 3 <= n <= 32, n >= 700, and universal upper bound for n >= 2"
+    type: other
+    relationship: other
+    note: >-
+      Original upper-bound and exact-maximum theorems (3 <= n <= 32 including
+      m(10) = 230, n >= 700, refutation of Barany and Frankl's Section 5 "+2"
+      remark for n >= 700, and universal upper bound for all n >= 2) discovered
+      and formalized by AI research agents built and directed by Tyler Hughes;
+      accompanying unrefereed manuscript at mathdiscoveries.org.
   - title: "Cells in the box and a hyperplane"
     authors:
       - "Imre Barany"
