@@ -1,0 +1,48 @@
+{
+  "creators": [
+    {
+      "name": "Hughes, Tyler B.",
+      "orcid": "0000-0001-6221-9014"
+    }
+  ],
+  "title": "Maximum Unit Cubes Cut by a Plane in [0, n]^3 (Cheese-Cutting Theorem M)",
+  "description": "Unconditional Lean 4 + Mathlib formalization over R of the exact maximum number m(n) of open unit cubes of the n x n x n cube [0, n]^3 met by a single plane, proving m(n) = floor((9n^2 + 4n - 17)/4) for all 3 <= n <= 32 (in particular m(10) = 230, settling the open case stated by Barany and Frankl, 2021) and for all n >= 700, refuting Barany and Frankl's Section 5 \"+2\" remark for all n >= 700, and proving the universal upper bound m(n) <= floor((9n^2 + 6n - 20)/4) for every n >= 2. The finite intermediate window 33 <= n <= 699 is not discharged inside Lean and is certified separately by exact-integer programs documented in the accompanying paper. Generated and checked by AI research agents built and directed by Tyler B. Hughes. No human mathematician has yet refereed the proof.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "apache-2.0",
+  "language": "eng",
+  "keywords": [
+    "Lean 4",
+    "formalized mathematics",
+    "theorem proving",
+    "combinatorics",
+    "math.CO",
+    "metric geometry",
+    "math.MG",
+    "MSC 2020: 52C07",
+    "MSC 2020: 52C35"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://mathdiscoveries.org/results/cheese-cut",
+      "relation": "isSupplementTo",
+      "resource_type": "other"
+    },
+    {
+      "identifier": "https://doi.org/10.1080/00029890.2021.1901463",
+      "relation": "references",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://doi.org/10.4171/JEMS/1252",
+      "relation": "references",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://doi.org/10.1016/S1524-0703(03)00004-3",
+      "relation": "references",
+      "resource_type": "publication-article"
+    }
+  ],
+  "notes": "Unrefereed. Generated and checked by AI research agents built and directed by Tyler B. Hughes."
+}
