@@ -1,5 +1,7 @@
 # Maximum Unit Cubes Cut by a Plane in `[0, n]³` (`CheeseCutM`)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24490755.svg)](https://doi.org/10.5281/zenodo.24490755)
+
 Lean 4 + Mathlib formalization of the exact maximum number `m(n)` of open unit
 cubes `(i, i + 1) × (j, j + 1) × (k, k + 1)` inside `[0, n]³` that a single
 real plane `a x + b y + c z = t` in `ℝ³` can meet.
